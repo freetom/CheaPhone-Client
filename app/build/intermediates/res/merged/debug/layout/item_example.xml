@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/item1"
+    android:background="@color/white">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/new_blue"
+        android:text="-Per ora chiedi a: marco.musi@outlook.com oppure a tomasbortoli@gmail.com"
+        android:textSize="20dp"
+        android:gravity="center"
+        android:paddingTop="8dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/new_blue"
+        android:id="@+id/delete"
+        android:text="-"
+        android:layout_gravity="right|top"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:textSize="40dp"
+        android:gravity="right"
+        android:layout_marginRight="8dp"/>
+</LinearLayout><!-- From: file:/home/tomas/Downloads/CheaPhone-Client/app/src/main/res/layout/item_example.xml -->

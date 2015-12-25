@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <string name="app_name">Prova</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="info">CheaPhone migliora la conoscenza dei tuoi consumi giorno dopo giorno, soprattutto nei primi due mesi. Non ti preoccupare ci pensa CheaPhone a tenere il conto!</string>
+    <string name="home">Il tuo smartphone sa quanto consumi e può calcolare quanto ti costerebbe ogni combinazione di tariffe, offerte ed opzioni tra quelle attivabili.</string>
+    <string name="privacy">Cheaphone è uno strumento potente e facile da usare, se stai apprezzando il nostro lavoro supportaci e sbloccherai nuove funzionalità!</string>
+    <string-array name="planets_array">
+        <item>Opzioni</item>
+    </string-array>
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
+    <string name="action_websearch">Web search</string>
+    <string name="app_not_available">Sorry, there\'s no web browser available</string>
+    <string-array name="operatore">
+        <item>tre <font fgcolor="#4A86E8"/></item>
+        <item>postemobile <font fgcolor="#4A86E8"/></item>
+        <item>wind <font fgcolor="#4A86E8"/></item>
+        <item>vodafone <font fgcolor="#4A86E8"/></item>
+        <item>fastweb <font fgcolor="#4A86E8"/></item>
+        <item>coopvoce <font fgcolor="#4A86E8"/></item>
+        <item>tim <font fgcolor="#4A86E8"/></item>
+    </string-array>
+    <string name="prompt">Seleziona operatore <font fgcolor="#4A86E8"/></string>
+
+</resources>

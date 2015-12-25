@@ -1,0 +1,8 @@
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@android:id/text1"
+    style="@style/spinnerItemStyle"
+    android:singleLine="true"
+    android:textColor="@color/new_blue"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:ellipsize="marquee" /><!-- From: file:/home/tomas/Downloads/CheaPhone-Client/app/src/main/res/layout/simple_spinner_item.xml -->

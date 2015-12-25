@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.greatapplications.bestoffer"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.READ_CALL_LOG" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="21" />
+
+    <application
+        android:allowBackup="true"
+        android:label="CheaPhone"
+        android:theme="@style/AppTheme"
+        android:icon="@drawable/logo"
+        >
+
+        <receiver android:enabled="true" android:name=".BootUpReceiver"
+            android:permission="android.permission.RECEIVE_BOOT_COMPLETED">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </receiver>
+
+        <service android:name="MainService"/>
+
+        <!-- Splash screen -->
+        <activity
+            android:name="com.greatapplications.bestoffergui.SplashScreen"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+
+        <activity
+            android:name="com.greatapplications.bestoffergui.MainActivity"
+            android:screenOrientation="portrait"
+            >
+
+        </activity>
+
+        <activity
+            android:name="com.greatapplications.bestoffergui.Offerta"
+            android:screenOrientation="portrait"
+
+
+            />
+
+        <activity
+        android:name="com.greatapplications.bestoffergui.Opzioni"
+        android:screenOrientation="portrait"
+
+
+        />
+
+    </application>
+
+</manifest>

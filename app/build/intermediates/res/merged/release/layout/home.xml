@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:paddingBottom="16dp"
+    android:background="@color/white">
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/scrollView"
+    >
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/padre"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:paddingBottom="16dp"
+    android:background="@color/white">
+
+
+    <TextView
+        android:id="@+id/giorni"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:text="Giorni di utilizzo in memoria"
+        android:textColor="@color/new_blue"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:padding="16dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/giorni"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/immagini"
+        >
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/immagini"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/numeri"
+        android:paddingBottom="8dp">
+
+        </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/separatore"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_below="@+id/numeri"
+        android:background="@color/sfondo"></RelativeLayout>
+
+    <TextView
+        android:id="@+id/frase3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="16dp"
+        android:paddingTop="16dp"
+        android:textColor="@color/new_blue"
+        android:textSize="20dp"
+        android:isScrollContainer="true"
+        android:gravity="center_horizontal"
+        android:layout_below="@+id/separatore"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"/>
+
+    <RelativeLayout
+        android:id="@+id/separatore2"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_below="@+id/frase3"
+        android:background="@color/sfondo"></RelativeLayout>
+
+    <TextView
+    android:id="@+id/frase"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/separatore2"
+    android:paddingTop="30dp"
+    android:paddingBottom="32dp"
+    android:text="@string/home"
+    android:textColor="@color/new_blue"
+    android:textSize="20dp"
+        android:gravity="center_horizontal"
+    android:isScrollContainer="true"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"/>
+
+    <TextView
+        android:id="@+id/frase2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="8dp"
+        android:paddingTop="8dp"
+        android:text="Grazie a CheaPhone scopri se puoi risparmiare!"
+        android:textColor="@color/new_blue"
+        android:textSize="20dp"
+        android:isScrollContainer="true"
+        android:gravity="center_horizontal"
+        android:layout_below="@+id/frase"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        />
+
+
+</RelativeLayout>
+</ScrollView>
+</RelativeLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- From: file:/home/tomas/Downloads/CheaPhone/app/src/main/res/layout/home.xml -->

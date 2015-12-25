@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="blue" type="color">#123753</item>
+    <item name="light_blue" type="color">#123753</item>
+    <!--<item name="light_blue" type="color">#486B89</item>-->
+    <item name="sfondo" type="color">#A2B7C9</item>
+    <item name="bottone" type="color">#0A328D</item>
+    <item name="orange" type="color">#D34A00</item>
+    <item name="actionbar_text" type="color">#065D8C</item>
+    <item name="white" type="color">#FFFFFF</item>
+    <item name="button_color" type="color">#0B308E</item>
+    <item name="new_blue" type="color">#4A86E8</item>
+
+
+    <integer-array name="androidcolors">
+        <item>@color/blue</item>
+        <item>@color/light_blue</item>
+        <item>@color/sfondo</item>
+        <item>@color/bottone</item>
+        <item>@color/orange</item>
+        <item>@color/actionbar_text</item>
+        <item>@color/white</item>
+        <item>@color/button_color</item>
+    </integer-array>
+
+</resources>
+
