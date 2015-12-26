@@ -5,4 +5,4 @@
     android:textColor="@color/new_blue"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:ellipsize="marquee" /><!-- From: file:/home/tomas/Downloads/CheaPhone-Client/app/src/main/res/layout/simple_spinner_item.xml -->
+    android:ellipsize="marquee" /><!-- From: file:/home/tomas/CheaPhone-Client/app/src/main/res/layout/simple_spinner_item.xml -->

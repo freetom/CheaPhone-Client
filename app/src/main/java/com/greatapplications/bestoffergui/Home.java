@@ -54,16 +54,19 @@ import com.greatapplications.bestoffer.Constants;
 import com.greatapplications.bestoffer.MainService;
 import com.greatapplications.bestoffer.Pair;
 import com.greatapplications.bestoffer.R;
+import com.greatapplications.bestoffer.Result;
 import com.greatapplications.bestoffer.Serialize;
 import com.greatapplications.bestoffer.Utility;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Calendar;
 
 
 //Pagina principale con bottone
 public class Home extends Fragment {
+
 
     private static final int PROGRESS = 0x1;
     private TextView giorni_calls;
@@ -98,10 +101,6 @@ public class Home extends Fragment {
         giorni_calls=new TextView(getActivity());
         giorni_sms=new TextView(getActivity());
         giorni_dth=new TextView(getActivity());
-
-
-
-
 
 
         new Thread(new Runnable() {
@@ -230,66 +229,7 @@ public class Home extends Fragment {
 
         /*TextView t=(TextView) rootView.findViewById(R.id.frase);*/
         Typeface type = Typeface.createFromAsset(getActivity().getAssets(), "fonts/helvetica-neue-bold.ttf");
-        /*//Fragment params
-        t.setTextSize(30);
-        t.setTypeface(type);*/
-       /* final Button b = (Button) rootView.findViewById(R.id.button);
-        b.setTypeface(type);
-        b.setBackgroundColor(Color.rgb(74, 134, 232));
 
-
-
-        //quando premi il bottone parte il thread che attende il calcolo
-        b.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                    b.setBackgroundColor(Color.rgb(81, 94, 145));
-                    b.refreshDrawableState();
-                    try {
-
-
-                        MainActivity m = (MainActivity) getActivity();
-
-                        if (m.getRet().size() == 1) {
-                            getActivity().runOnUiThread(new Runnable() {
-                                @Override
-                                public void run() {
-                                    Toast.makeText(getActivity(), "Data telefono errata", Toast.LENGTH_SHORT).show();
-                                    b.setBackgroundColor(Color.rgb(74, 134, 232));
-                                }
-                            });
-
-                        } else if (m.getRet().size() == 0 || m.getRet() == null) {
-                            getActivity().runOnUiThread(new Runnable() {
-                                @Override
-                                public void run() {
-                                    Toast.makeText(getActivity(), "Riprova!", Toast.LENGTH_SHORT).show();
-                                    b.setBackgroundColor(Color.rgb(74, 134, 232));
-                                }
-                            });
-
-                        } else {
-                            if (m.check) {
-                                m.check = !m.check;
-                                b.setBackgroundColor(Color.rgb(74, 134, 232));
-                                Intent stampa = new Intent(getActivity(), StampaOfferte.class);
-                                startActivity(stampa);
-                            }
-                        }
-                    } catch (Exception e) {
-                        getActivity().runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                                Toast.makeText(getActivity(), "errore3", Toast.LENGTH_LONG).show();
-                                b.setBackgroundColor(Color.rgb(74, 134, 232));
-                            }
-                        });
-                        System.out.println(e.toString());
-                    }
-
-            }
-        });*/
 
         return rootView;
 
@@ -311,4 +251,5 @@ public class Home extends Fragment {
 
 
     }
+
 }

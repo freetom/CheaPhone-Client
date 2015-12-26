@@ -50,14 +50,9 @@ public class SplashScreen extends Activity {
             @Override
             public void run() {
                 try{
-                    //Nell'if dell'app ufficiale andrà il seguente check: il servizio dev'essere pronto,
-                    //devono esserci le offerte, devono esserci tutti i numeri in cache.
-                    //devono esserci sufficienti informazioni sul monitoraggio dati.
-                    boolean Iflag=true;
-                    while(Iflag) {
-                        if (MainService.ready) {
-                            Iflag = false;
-                        }
+
+                    while(!MainService.ready) {
+                        Thread.sleep(100);
                     }
                     if(MainService.ready /*&& MainService.dth.getDaysOfMonitoring()>0 && MainService.haveOffers *//*&& ComputeBestOffer.checkForUnknownOperators(MainService.hs, MainService.hc, MainService.cache)*/)
                     // Constants.validOperator() &&

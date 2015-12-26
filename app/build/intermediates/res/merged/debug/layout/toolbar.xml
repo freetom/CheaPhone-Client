@@ -6,4 +6,4 @@
     android:layout_height="wrap_content"
     android:minHeight="?attr/actionBarSize"
     android:background="?attr/colorPrimaryDark"/>
-<!-- From: file:/home/tomas/Downloads/CheaPhone-Client/app/src/main/res/layout/toolbar.xml -->
+<!-- From: file:/home/tomas/CheaPhone-Client/app/src/main/res/layout/toolbar.xml -->

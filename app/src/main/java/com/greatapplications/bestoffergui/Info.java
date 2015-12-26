@@ -24,7 +24,7 @@
 package com.greatapplications.bestoffergui;
 
 /**
- * Created by giacomo on 11/12/2014.
+ * Created by giacomo on 11/12/2014. Modified by Tomas
  */
 import android.app.Activity;
 import android.graphics.Color;
@@ -54,9 +54,7 @@ import java.io.File;
 import java.util.Calendar;
 import java.util.Random;
 
-/**
- * Created by giacomo on 06/12/2014.
- */
+
 //Informazioni sull'app
 public class Info extends Fragment {
 
@@ -78,6 +76,7 @@ public class Info extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState)
     {
+
         View rootView = inflater.inflate(R.layout.info, container, false);
 
         mContainerView = (ViewGroup) rootView.findViewById(R.id.container);

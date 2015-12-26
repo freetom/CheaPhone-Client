@@ -58,4 +58,4 @@
         android:startOffset="@integer/card_flip_time_half"
         android:duration="1" />
 </set>
-<!-- From: file:/home/tomas/Downloads/CheaPhone-Client/app/src/main/res/animator/card_flip_right_in.xml -->
+<!-- From: file:/home/tomas/CheaPhone-Client/app/src/main/res/animator/card_flip_right_in.xml -->

@@ -77,20 +77,27 @@ public class Stampa extends Fragment {
 
     public static String err_msg="";
 
+    public static Stampa current;
+
     private List<Option> data_o= new ArrayList<>();
     private List<Data> mData=new ArrayList<Data>();;
 
     public Stampa(){
-
-
+        current=this;
     }
 
+
+    public LayoutInflater inflater;
+    public ViewGroup container;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState)
     {
-        View rootView = inflater.inflate(R.layout.stampa, container, false);
+        while(MainActivity.is_computing)
+            ;
 
+        View rootView = inflater.inflate(R.layout.stampa, container, false);
+        this.inflater=inflater; this.container=container;
         mData.removeAll(mData);
 
         ret.removeAll(ret);

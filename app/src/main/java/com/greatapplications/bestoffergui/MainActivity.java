@@ -43,6 +43,7 @@ import android.os.Bundle;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ActionMenuView;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
@@ -82,9 +83,12 @@ public class MainActivity extends ActionBarActivity {
     int an_selected=Color.rgb(74, 134, 232);
 
 
+    public static MainActivity current;
+    public volatile static Calendar last_time;
+    public volatile static boolean is_computing=false;
 
-    private String YandMnumber;
-    private ArrayList<Result> ret;
+    public static String YandMnumber;
+    public static ArrayList<Result> ret;
 
     public static MainActivity activity;
 
@@ -98,12 +102,15 @@ public class MainActivity extends ActionBarActivity {
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState){
+        current=this;
+
+        updateOffers();
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         activity=this;
         toolbar = (Toolbar) findViewById(R.id.toolbar);
-        
         if (toolbar != null) {
             setSupportActionBar(toolbar);
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -118,8 +125,6 @@ public class MainActivity extends ActionBarActivity {
          if(ret==null)
             ret = new ArrayList<Result>();
 
-
-
 		//startService(new Intent(this,MainService.class));
 
         toolbar.setNavigationIcon(null);
@@ -132,66 +137,7 @@ public class MainActivity extends ActionBarActivity {
 			e.printStackTrace();
 		}*/
 
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try{
 
-                    boolean Iflag=true;
-                    while(Iflag) {
-                        if (MainService.ready) {
-                            Iflag = false;
-                        }
-                    }
-                    if(MainService.ready /*&& MainService.dth.getDaysOfMonitoring()>0 && MainService.haveOffers *//*&& ComputeBestOffer.checkForUnknownOperators(MainService.hs, MainService.hc, MainService.cache)*/)
-                    // Constants.validOperator() &&
-                    //MainService.haveSuffInfo &&
-
-                    {
-                        try {
-                            Pair<ArrayList<Result>,String> res=ComputeBestOffer.findBestOffer();
-                            if(res!=null) {
-                                ret = res.getFirst();
-                                YandMnumber = res.getSecond();
-
-                                if(ret.size()==1)
-                                    Stampa.err_msg="Data e ora sul telefono sbagliate, correggile per un funzionamento corretto";
-                                else
-                                    Stampa.err_msg="";
-                            }
-                            else {
-                                ret = null;
-                                Stampa.err_msg="File delle offerte non disponibile in locale, riprova più tardi.";
-                            }
-                        } catch (IOException e) {
-                            runOnUiThread(new Runnable() {
-                                @Override
-                                public void run() {
-                                    Toast.makeText(getApplicationContext(), "errore", Toast.LENGTH_SHORT).show();
-                                }
-                            });
-                            e.printStackTrace();
-                        }
-
-
-                        //create the file that show that the first calculus is happened
-                        //Utility.CreateEmptyFile(Constants.applicationFilesPath + Constants.isFirstCalculus);
-                    }
-
-                }
-                catch(Exception e){
-                    runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            Toast.makeText(getApplicationContext(), "errore2", Toast.LENGTH_LONG).show();
-                        }
-                    });
-                    System.out.println(e.toString());
-                }
-
-            }
-
-        }).start();
 
 
 
@@ -235,7 +181,7 @@ public class MainActivity extends ActionBarActivity {
         //layout privacy
         p=(RelativeLayout) findViewById(R.id.privacy);
         TextView privacy=new TextView(this);
-        privacy.setLayoutParams(new LayoutParams(P.x/3, LayoutParams.MATCH_PARENT));
+        privacy.setLayoutParams(new LayoutParams(P.x / 3, LayoutParams.MATCH_PARENT));
         privacy.setText("Info");
         privacy.setTypeface(type);
         privacy.setGravity(Gravity.CENTER);
@@ -252,18 +198,24 @@ public class MainActivity extends ActionBarActivity {
 
             @Override
             public void onPageSelected(int position) {
-                if(position==0){
+                Calendar nearNow = Calendar.getInstance();
+                nearNow.add(Calendar.MILLISECOND, -5000);
+                if (MainActivity.last_time != null && nearNow.after(MainActivity.last_time))
+                    MainActivity.current.updateOffers();
+
+                if (position == 0) {
                     h.setBackgroundColor(selected);
                     p.setBackgroundColor(an_selected);
                     i.setBackgroundColor(an_selected);
                 }
-                if(position==1){
+                if (position == 1) {
+                    Stampa.current.onCreateView(Stampa.current.inflater,Stampa.current.container,null);
                     i.setBackgroundColor(selected);
                     h.setBackgroundColor(an_selected);
                     p.setBackgroundColor(an_selected);
                 }
 
-                if(position==2){
+                if (position == 2) {
                     p.setBackgroundColor(selected);
                     h.setBackgroundColor(an_selected);
                     i.setBackgroundColor(an_selected);
@@ -323,7 +275,8 @@ public class MainActivity extends ActionBarActivity {
             }
         });
 		
-		
+		while(is_computing)
+            ;
 		
 	}
 
@@ -336,6 +289,64 @@ public class MainActivity extends ActionBarActivity {
     }
     public String getYu(){
         return YandMnumber;
+    }
+
+    public void updateOffers() {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try{
+                    is_computing=true;
+                    last_time=Calendar.getInstance();
+
+                    while(!MainService.ready) {
+                        ;
+                    }
+
+                    try {
+                        Pair<ArrayList<Result>,String> res=ComputeBestOffer.findBestOffer();
+                        if(res!=null) {
+                            ret = res.getFirst();
+                            YandMnumber = res.getSecond();
+
+                            if(ret.size()==1)
+                                Stampa.err_msg="Data e ora sul telefono sbagliate, correggile per un funzionamento corretto";
+                            else
+                                Stampa.err_msg="";
+                        }
+                        else {
+                            ret = null;
+                            Stampa.err_msg="File delle offerte non disponibile in locale, riprova più tardi.";
+                        }
+                    } catch (IOException e) {
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                Toast.makeText(getApplicationContext(), "errore", Toast.LENGTH_SHORT).show();
+                            }
+                        });
+                        e.printStackTrace();
+                    }
+
+                    //create the file that show that the first calculus is happened
+                    //Utility.CreateEmptyFile(Constants.applicationFilesPath + Constants.isFirstCalculus);
+
+
+                }
+                catch(Exception e){
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            Toast.makeText(getApplicationContext(), "errore2", Toast.LENGTH_LONG).show();
+                        }
+                    });
+                    System.out.println(e.toString());
+                }
+                is_computing=false;
+
+            }
+
+        }).start();
     }
 
     /* The click listner for ListView in the navigation drawer */
@@ -373,7 +384,6 @@ public class MainActivity extends ActionBarActivity {
             // Return a DummySectionFragment (defined as a static inner class
             // below) with the page number as its lone argument.
             Fragment fragment = new Fragment();
-
             switch (position) {
                 case 0:
                     return fragment = new Home();
