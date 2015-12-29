@@ -138,7 +138,7 @@ public class Stampa extends Fragment {
 
         YandMnumber = m.getYu();
 
-        size=100;
+        size=m.getRet().size();
 
         for (int j = 1; j < size; j++)
             addItem(ret, j);
