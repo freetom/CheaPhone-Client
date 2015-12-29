@@ -244,7 +244,8 @@ public class ComputeBestOffer {
 		return ret;
 	}
 	
-	//return null if any error is encountered in parsing the file of combinations, like corrupted offer or option or rate.
+	//return null if the fileOfOffers is empty or not existing
+	//return an array with 2 elements with cost -1 if the parsing went wrong
 	//return an array with a value with cost -1 if the date of the phone is wrong
 	//Otherwise return the array list of results.
 	public static Pair<ArrayList<Result>,String> findBestOffer() throws IOException{
@@ -309,8 +310,12 @@ public class ComputeBestOffer {
 	    /**********************************/
 	    
 	    
-	    if(error)
-	    	return null;
+	    if(error) {
+			ArrayList<Result> ret=new ArrayList<Result>();
+			ret.add(new Result(null,null,null,-1,null,null));
+			ret.add(new Result(null,null,null,-1,null,null));
+			return new Pair<ArrayList<Result>,String>(ret,null);
+		}
 	    
 	    generateEmptyOffersAndOptions(offers,options);
 	    
