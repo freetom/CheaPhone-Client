@@ -115,8 +115,6 @@ public class Home extends Fragment {
                 }
                     try {
                         Thread.sleep(100);
-                        final ArrayList<String> numbers;
-                        ArrayList<String> numberOfOperatorsUnknown = new ArrayList<String>();
 
                         sms = MainService.hs.getDaysOfMonitoring();
                         data = MainService.dth.getDaysOfMonitoring();

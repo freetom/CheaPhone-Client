@@ -53,10 +53,10 @@ public class CustomRecyclerAdapter extends RecyclerView.Adapter<RecyclerViewHold
         this.activity=activity;
     }
 
-    public void updateList(List<Data> data) {
-        mData = data;
-        notifyDataSetChanged();
-    }
+    //public void updateList(List<Data> data) {
+    //    mData = data;
+    //    notifyDataSetChanged();
+    //}
     @Override
     public int getItemCount() {
         return mData.size();
@@ -147,8 +147,6 @@ public class CustomRecyclerAdapter extends RecyclerView.Adapter<RecyclerViewHold
         mData.remove(position);
         notifyItemRemoved(position);
     }
-
-
 
 
 

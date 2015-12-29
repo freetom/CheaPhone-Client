@@ -25,4 +25,4 @@
         android:textSize="40dp"
         android:gravity="right"
         android:layout_marginRight="8dp"/>
-</LinearLayout><!-- From: file:/home/tomas/Downloads/CheaPhone/app/src/main/res/layout/item_example.xml -->
+</LinearLayout><!-- From: file:/home/tomas/CheaPhone-Client/app/src/main/res/layout/item_example.xml -->

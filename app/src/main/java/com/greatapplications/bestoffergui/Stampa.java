@@ -69,9 +69,11 @@ public class Stampa extends Fragment {
     private float sforo;
     int size;
 
-    private RecyclerView mRecyclerView;
-    private CustomRecyclerAdapter mAdapter;
-    private RecyclerView.LayoutManager mLayoutManager;
+    private RecyclerView mRecyclerView=null;
+    private CustomRecyclerAdapter mAdapter=null;
+    private RecyclerView.LayoutManager mLayoutManager=null;
+
+    MainActivity m;
 
     int text_color= Color.rgb(74, 134, 232);
 
@@ -80,15 +82,22 @@ public class Stampa extends Fragment {
     public static Stampa current;
 
     private List<Option> data_o= new ArrayList<>();
-    private List<Data> mData=new ArrayList<Data>();;
+    private List<Data> mData=new ArrayList<Data>();
 
     public Stampa(){
-        current=this;
-    }
 
+        current=this;
+
+    }
 
     public LayoutInflater inflater;
     public ViewGroup container;
+
+
+    TextView text=null,cos = null;
+    LinearLayout oper;
+    ImageView image;
+    LinearLayout tab = null;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState)
@@ -98,95 +107,125 @@ public class Stampa extends Fragment {
 
         View rootView = inflater.inflate(R.layout.stampa, container, false);
         this.inflater=inflater; this.container=container;
-        mData.removeAll(mData);
+        //mData.removeAll(mData);
+        mData.clear();
 
-        ret.removeAll(ret);
+        //ret.removeAll(ret);
+        ret.clear();
 
+        m = (MainActivity) getActivity();
 
-
-        MainActivity m = (MainActivity) getActivity();
+        RelativeLayout logo = (RelativeLayout) rootView.findViewById(R.id.logo);
+        RelativeLayout of = (RelativeLayout) rootView.findViewById(R.id.offerta);
+        RelativeLayout pre = (RelativeLayout) rootView.findViewById(R.id.prezzo);
 
         if(!err_msg.equals("")){
-            TextView text = new TextView(getActivity());
-            text.setText("\n"+err_msg);
+
+            if(text==null) {
+                text = new TextView(getActivity());
+                of.addView(text);
+            }
+            text.setText("\n" + err_msg);
             text.setTextSize(20);
             text.setTextColor(text_color);
             text.setGravity(Gravity.CENTER);
 
-            RelativeLayout of = (RelativeLayout) rootView.findViewById(R.id.offerta);
-            of.addView(text);
-
-            mRecyclerView = (RecyclerView) rootView.findViewById(R.id.my_recycler_view);
-
-            // If the size of views will not change as the data changes.
-            //mRecyclerView.setHasFixedSize(true);
-
-            // Setting the LayoutManager.
-            mLayoutManager = new LinearLayoutManager(getActivity());
-            mRecyclerView.setLayoutManager(mLayoutManager);
 
 
-            // Setting the adapter.
-            mAdapter = new CustomRecyclerAdapter(m.getApplicationContext(),getActivity());
-
-            return rootView;
+            m.resetRet();
         }
 
 
-        for(int h=0; h<m.getRet().size(); h++)
+
+        mRecyclerView = (RecyclerView) rootView.findViewById(R.id.my_recycler_view);
+
+        // If the size of views will not change as the data changes.
+        mRecyclerView.setHasFixedSize(true);
+
+        // Setting the LayoutManager.
+        if(mLayoutManager==null) {
+            mLayoutManager = new LinearLayoutManager(getActivity());
+            mRecyclerView.setLayoutManager(mLayoutManager);
+        }
+
+        for (int h = 0; h < m.getRet().size(); h++)
             ret.add(m.getRet().get(h));
 
         YandMnumber = m.getYu();
 
-        size=m.getRet().size();
+        size = m.getRet().size();
 
         for (int j = 1; j < size; j++)
             addItem(ret, j);
 
         //stampo la prima
-        TextView text = new TextView(getActivity());
-        text.setText(String.valueOf(ret.get(0).offer.offerName));
+        if (text == null) {
+            text = new TextView(getActivity());
+            of.addView(text);
+        }
+        if (ret.size() > 0) text.setText(String.valueOf(ret.get(0).offer.offerName));
         text.setTextSize(20);
         text.setTextColor(text_color);
         text.setGravity(Gravity.CENTER);
 
-        LinearLayout oper = new LinearLayout(getActivity());
-        ImageView image = new ImageView(getActivity());
-
-        if (String.valueOf(ret.get(0).offer.operator).equals("tre")) {
-            image.setImageResource(R.drawable.tre);
-
-        }
-        if (String.valueOf(ret.get(0).offer.operator).equals("postemobile")) {
-            image.setImageResource(R.drawable.postemobile);
-
-        }
-        if (String.valueOf(ret.get(0).offer.operator).equals("wind")) {
-            image.setImageResource(R.drawable.wind);
-
-        }
-        if (String.valueOf(ret.get(0).offer.operator).equals("vodafone")) {
-            image.setImageResource(R.drawable.vodafone);
-
-        }
-        if (String.valueOf(ret.get(0).offer.operator).equals("fastweb")) {
-            image.setImageResource(R.drawable.fastweb);
-
-        }
-        if (String.valueOf(ret.get(0).offer.operator).equals("coopvoce")) {
-            image.setImageResource(R.drawable.coopvoce);
-
-        }
-        if (String.valueOf(ret.get(0).offer.operator).equals("tim")) {
-            image.setImageResource(R.drawable.tim);
-
+        mRecyclerView = (RecyclerView) rootView.findViewById(R.id.my_recycler_view);
+        if(mAdapter==null) {
+            mAdapter = new CustomRecyclerAdapter(m.getApplicationContext(), getActivity());
+            mRecyclerView.setAdapter(mAdapter);
         }
 
+        if (oper == null) {
+            oper = new LinearLayout(getActivity());
+            logo.addView(oper);
+        }
+        if (image == null) {
+            image = new ImageView(getActivity());
+            oper.addView(image);
+        }
+
+        if (ret.size() > 0) {
+            if (String.valueOf(ret.get(0).offer.operator).equals("tre")) {
+                image.setImageResource(R.drawable.tre);
+
+            }
+            if (String.valueOf(ret.get(0).offer.operator).equals("postemobile")) {
+                image.setImageResource(R.drawable.postemobile);
+
+            }
+            if (String.valueOf(ret.get(0).offer.operator).equals("wind")) {
+                image.setImageResource(R.drawable.wind);
+
+            }
+            if (String.valueOf(ret.get(0).offer.operator).equals("vodafone")) {
+                image.setImageResource(R.drawable.vodafone);
+
+            }
+            if (String.valueOf(ret.get(0).offer.operator).equals("fastweb")) {
+                image.setImageResource(R.drawable.fastweb);
+
+            }
+            if (String.valueOf(ret.get(0).offer.operator).equals("coopvoce")) {
+                image.setImageResource(R.drawable.coopvoce);
+
+            }
+            if (String.valueOf(ret.get(0).offer.operator).equals("tim")) {
+                image.setImageResource(R.drawable.tim);
+
+            }
+        }
         oper.setGravity(Gravity.CENTER);
-        oper.addView(image);
 
-        TextView cos = new TextView(getActivity());
-        cos.setText(approssimato(String.valueOf(ret.get(0).cost / 1000f)) + "€");
+
+        if (cos == null) {
+            cos = new TextView(getActivity());
+            pre.addView(cos);
+        }
+        if (!err_msg.equals(""))
+            cos.setVisibility(View.GONE);
+        else
+            cos.setVisibility(View.VISIBLE);
+        if (ret.size() > 0)
+            cos.setText(approssimato(String.valueOf(ret.get(0).cost / 1000f)) + "€");
         cos.setTextSize(30);
         cos.setGravity(Gravity.CENTER);
 
@@ -199,67 +238,59 @@ public class Stampa extends Fragment {
         getActivity().getWindowManager().getDefaultDisplay().getSize(P);
         cos.setTextColor(text_color);
 
-
-        text.setLayoutParams(new ViewGroup.LayoutParams(P.x / 3, ViewGroup.LayoutParams.MATCH_PARENT));
-        oper.setLayoutParams(new ViewGroup.LayoutParams(P.x / 3, ViewGroup.LayoutParams.MATCH_PARENT));
-        cos.setLayoutParams(new ViewGroup.LayoutParams(P.x / 3, ViewGroup.LayoutParams.MATCH_PARENT));
-
-        LinearLayout tab = (LinearLayout) rootView.findViewById(R.id.ling);
-
-        RelativeLayout logo = (RelativeLayout) rootView.findViewById(R.id.logo);
-        RelativeLayout of = (RelativeLayout) rootView.findViewById(R.id.offerta);
-        RelativeLayout pre = (RelativeLayout) rootView.findViewById(R.id.prezzo);
-
-        logo.addView(oper);
-        of.addView(text);
-        pre.addView(cos);
+        if (err_msg.equals("")) {
+            text.setLayoutParams(new RelativeLayout.LayoutParams(P.x / 3, RelativeLayout.LayoutParams.MATCH_PARENT));
+            oper.setLayoutParams(new RelativeLayout.LayoutParams(P.x / 3, RelativeLayout.LayoutParams.MATCH_PARENT));
+            cos.setLayoutParams(new RelativeLayout.LayoutParams(P.x / 3, RelativeLayout.LayoutParams.MATCH_PARENT));
+        } else
+            text.setLayoutParams(new RelativeLayout.LayoutParams(P.x, RelativeLayout.LayoutParams.MATCH_PARENT));
 
 
-        mRecyclerView = (RecyclerView) rootView.findViewById(R.id.my_recycler_view);
+
 
         // If the size of views will not change as the data changes.
         mRecyclerView.setHasFixedSize(true);
 
-        // Setting the LayoutManager.
-        mLayoutManager = new LinearLayoutManager(getActivity());
-        mLayoutManager.scrollToPosition(indice-4);
-        mRecyclerView.setLayoutManager(mLayoutManager);
+
+        mLayoutManager.scrollToPosition(indice - 4);
+
+        for (int k = 0; k < mAdapter.getItemCount(); k++)
+            mAdapter.removeItem(k--);
+        int x=mAdapter.getItemCount();
+
+        for (int k = 0; k < size - 1; k++)
+            mAdapter.addItem(k, (Data)mData.get(k).clone());
 
 
-        // Setting the adapter.
-        mAdapter = new CustomRecyclerAdapter(m.getApplicationContext(),getActivity());
 
-        for(int k=0; k<size-1; k++)
-            mAdapter.addItem(k,mData.get(k));
+        if (tab == null) {
+            tab = (LinearLayout) rootView.findViewById(R.id.ling);
+            tab.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    indice = 0;
+                    Intent offerta = new Intent(getActivity(), Offerta.class);
+                    offerta.putExtra("pos", indice);
+                    startActivity(offerta);
+                }
+            });
 
-        mRecyclerView.setAdapter(mAdapter);
-
-        tab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                indice = 0;
-                Intent offerta = new Intent(getActivity(), Offerta.class);
-                offerta.putExtra("pos", indice);
-                startActivity(offerta);
-            }
-        });
-
-        mRecyclerView.addOnItemTouchListener(
-                new RecyclerItemClickListener(m.getApplicationContext(), new RecyclerItemClickListener.OnItemClickListener() {
-                    @Override
-                    public void onItemClick(View view, int position) {
-                        // do whatever
-                        indice = position + 1;
-                        Intent offerta = new Intent(getActivity(), Offerta.class);
-                        offerta.putExtra("pos", indice);
-                        startActivity(offerta);
-                    }
-                })
-        );
+            mRecyclerView.addOnItemTouchListener(
+                    new RecyclerItemClickListener(m.getApplicationContext(), new RecyclerItemClickListener.OnItemClickListener() {
+                        @Override
+                        public void onItemClick(View view, int position) {
+                            // do whatever
+                            indice = position + 1;
+                            Intent offerta = new Intent(getActivity(), Offerta.class);
+                            offerta.putExtra("pos", indice);
+                            startActivity(offerta);
+                        }
+                    })
+            );
+        }
 
 
         return rootView;
-
     }
 
     public void addItem(ArrayList<Result> r, int i) {

@@ -39,4 +39,9 @@ public class Data {
         this.prezzo = prezzo;
         this.img=img;
     }
+
+    @Override
+    public Object clone(){
+        return new Data(this.text,this.prezzo,this.img);
+    }
 }

@@ -9,4 +9,4 @@
         android:text="Menu"
         android:textColor="@color/new_blue"
         android:textSize="30dp"/>
-</LinearLayout><!-- From: file:/home/tomas/Downloads/CheaPhone/app/src/main/res/layout/menu.xml -->
+</LinearLayout><!-- From: file:/home/tomas/CheaPhone-Client/app/src/main/res/layout/menu.xml -->

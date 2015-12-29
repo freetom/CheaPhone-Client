@@ -10,4 +10,4 @@
     android:textColor="#fff"
     android:background="?android:attr/activatedBackgroundIndicator"
     android:minHeight="?android:attr/listPreferredItemHeightSmall"/>
-<!-- From: file:/home/tomas/Downloads/CheaPhone/app/src/main/res/layout/drawer_list_item.xml -->
+<!-- From: file:/home/tomas/CheaPhone-Client/app/src/main/res/layout/drawer_list_item.xml -->

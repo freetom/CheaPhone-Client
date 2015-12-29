@@ -5,4 +5,4 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:minHeight="?attr/actionBarSize"
-    android:background="?attr/colorPrimaryDark"/><!-- From: file:/home/tomas/Downloads/CheaPhone/app/src/main/res/layout/toolbarf.xml -->
+    android:background="?attr/colorPrimaryDark"/><!-- From: file:/home/tomas/CheaPhone-Client/app/src/main/res/layout/toolbarf.xml -->

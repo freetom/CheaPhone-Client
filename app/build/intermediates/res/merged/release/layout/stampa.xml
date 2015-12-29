@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent"
+    android:id="@+id/main"
     android:orientation="vertical"
     android:background="@color/new_blue">
 
@@ -23,6 +24,7 @@
             android:background="@color/white">
 
         </RelativeLayout>
+
 
         <RelativeLayout
             android:id="@+id/offerta"
@@ -56,4 +58,4 @@
         android:layout_height="match_parent"/>
 
 </LinearLayout>
-<!-- From: file:/home/tomas/Downloads/CheaPhone/app/src/main/res/layout/stampa.xml -->
+<!-- From: file:/home/tomas/CheaPhone-Client/app/src/main/res/layout/stampa.xml -->

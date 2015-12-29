@@ -3,4 +3,4 @@
 <solid android:color="@color/white"/>
 <corners android:radius="3dp" />
 
-</shape><!-- From: file:/home/tomas/Downloads/CheaPhone/app/src/main/res/drawable/border_style_2.xml -->
+</shape><!-- From: file:/home/tomas/CheaPhone-Client/app/src/main/res/drawable/border_style_2.xml -->

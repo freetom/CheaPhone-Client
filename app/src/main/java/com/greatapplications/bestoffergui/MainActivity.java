@@ -200,8 +200,9 @@ public class MainActivity extends ActionBarActivity {
             public void onPageSelected(int position) {
                 Calendar nearNow = Calendar.getInstance();
                 nearNow.add(Calendar.MILLISECOND, -5000);
-                if (MainActivity.last_time != null && nearNow.after(MainActivity.last_time))
+                if (MainActivity.last_time != null && nearNow.after(MainActivity.last_time)) {
                     MainActivity.current.updateOffers();
+                }
 
                 if (position == 0) {
                     h.setBackgroundColor(selected);
@@ -209,7 +210,10 @@ public class MainActivity extends ActionBarActivity {
                     i.setBackgroundColor(an_selected);
                 }
                 if (position == 1) {
-                    Stampa.current.onCreateView(Stampa.current.inflater,Stampa.current.container,null);
+                    try {
+                        Stampa.current.onCreateView(Stampa.current.inflater, Stampa.current.container, null);
+                    }
+                    catch(Exception e){}
                     i.setBackgroundColor(selected);
                     h.setBackgroundColor(an_selected);
                     p.setBackgroundColor(an_selected);
@@ -292,11 +296,11 @@ public class MainActivity extends ActionBarActivity {
     }
 
     public void updateOffers() {
+        is_computing=true;
         new Thread(new Runnable() {
             @Override
             public void run() {
                 try{
-                    is_computing=true;
                     last_time=Calendar.getInstance();
 
                     while(!MainService.ready) {
@@ -312,13 +316,13 @@ public class MainActivity extends ActionBarActivity {
                             if(ret.size()==1)
                                 Stampa.err_msg="Data e ora sul telefono sbagliate, correggile per un funzionamento corretto";
                             else if(ret.size()==2)
-                                Stampa.err_msg="Errore nell'analisi del file offerte";
+                                Stampa.err_msg="Errore nell'analisi del file offerte. Probabilmente colpa del nostro operatore, ci scusiamo per il disagio";
                             else
                                 Stampa.err_msg="";
                         }
                         else {
                             ret = null;
-                            Stampa.err_msg="File delle offerte non disponibile in locale, riprova più tardi.";
+                            Stampa.err_msg="File delle offerte non disponibile in locale, riceverai una notifica a download avvenuto.";
                         }
                     } catch (IOException e) {
                         runOnUiThread(new Runnable() {
@@ -371,6 +375,9 @@ public class MainActivity extends ActionBarActivity {
 
     }
 
+    public void resetRet(){
+        ret=new ArrayList<Result>();
+    }
 
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
