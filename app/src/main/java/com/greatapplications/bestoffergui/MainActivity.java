@@ -316,7 +316,7 @@ public class MainActivity extends ActionBarActivity {
                             if(ret.size()==1)
                                 Stampa.err_msg="Data e ora sul telefono sbagliate, correggile per un funzionamento corretto";
                             else if(ret.size()==2)
-                                Stampa.err_msg="Errore nell'analisi del file offerte. Probabilmente colpa del nostro operatore, ci scusiamo per il disagio";
+                                Stampa.err_msg="File delle offerte malformato, [Negligenza dell'operatore], ci scusiamo per il disagio.";
                             else
                                 Stampa.err_msg="";
                         }

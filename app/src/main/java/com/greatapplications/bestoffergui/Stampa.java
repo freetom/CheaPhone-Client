@@ -125,7 +125,7 @@ public class Stampa extends Fragment {
                 text = new TextView(getActivity());
                 of.addView(text);
             }
-            text.setText("\n" + err_msg);
+            text.setText(err_msg);
             text.setTextSize(20);
             text.setTextColor(text_color);
             text.setGravity(Gravity.CENTER);
