@@ -37,7 +37,7 @@ public class Notification {
 
 		NotificationCompat.Builder notificationBuilder =
 		        new NotificationCompat.Builder(c)
-		        .setSmallIcon(R.drawable.ic_launcher)
+		        .setSmallIcon(R.drawable.logo)
 		        .setContentTitle(Constants.applicationName)
 		        .setContentText(text)
 		        .setContentIntent(viewPendingIntent)
