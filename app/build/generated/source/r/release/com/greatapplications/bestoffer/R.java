@@ -1423,16 +1423,17 @@ containing a value of this type.
         public static final int ic_phone_forward_grey600_48dp=0x7f020056;
         public static final int info_icon=0x7f020057;
         public static final int logo=0x7f020058;
-        public static final int plus=0x7f020059;
-        public static final int postemobile=0x7f02005a;
-        public static final int raised_button_background=0x7f02005b;
-        public static final int red_lock=0x7f02005c;
-        public static final int tab_indicato=0x7f02005d;
-        public static final int tim=0x7f02005e;
-        public static final int traffic_arrows=0x7f02005f;
-        public static final int tre=0x7f020060;
-        public static final int vodafone=0x7f020061;
-        public static final int wind=0x7f020062;
+        public static final int logo_24x24=0x7f020059;
+        public static final int plus=0x7f02005a;
+        public static final int postemobile=0x7f02005b;
+        public static final int raised_button_background=0x7f02005c;
+        public static final int red_lock=0x7f02005d;
+        public static final int tab_indicato=0x7f02005e;
+        public static final int tim=0x7f02005f;
+        public static final int traffic_arrows=0x7f020060;
+        public static final int tre=0x7f020061;
+        public static final int vodafone=0x7f020062;
+        public static final int wind=0x7f020063;
     }
     public static final class id {
         public static final int action_bar=0x7f0d0032;

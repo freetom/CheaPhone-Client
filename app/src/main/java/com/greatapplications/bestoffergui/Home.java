@@ -114,7 +114,7 @@ public class Home extends Fragment {
                     }
                 }
                     try {
-                        Thread.sleep(100);
+                        Thread.sleep(300);
 
                         sms = MainService.hs.getDaysOfMonitoring();
                         data = MainService.dth.getDaysOfMonitoring();
