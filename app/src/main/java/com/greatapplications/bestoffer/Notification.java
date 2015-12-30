@@ -21,6 +21,8 @@ package com.greatapplications.bestoffer;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.app.NotificationManagerCompat;
 
@@ -37,13 +39,13 @@ public class Notification {
 
 		NotificationCompat.Builder notificationBuilder =
 		        new NotificationCompat.Builder(c)
-		        .setSmallIcon(R.drawable.logo_24x24)
-				.setColor(0)
+				.setLargeIcon(((BitmapDrawable) c.getResources().getDrawable(R.drawable.ic_notification)).getBitmap())
+				.setSmallIcon(R.drawable.ic_notification)
+				//.setColor(0)
 		        .setContentTitle(Constants.applicationName)
 		        .setContentText(text)
 		        .setContentIntent(viewPendingIntent)
 		        .setAutoCancel(true);
-
 		// Get an instance of the NotificationManager service
 		NotificationManagerCompat notificationManager =
 		        NotificationManagerCompat.from(c);

@@ -1419,11 +1419,11 @@ containing a value of this type.
         public static final int ic_mail_black_24dp=0x7f020052;
         public static final int ic_mail_black_24dp3=0x7f020053;
         public static final int ic_menu_white_24dp=0x7f020054;
-        public static final int ic_phone_forward_grey600_36dp=0x7f020055;
-        public static final int ic_phone_forward_grey600_48dp=0x7f020056;
-        public static final int info_icon=0x7f020057;
-        public static final int logo=0x7f020058;
-        public static final int logo_24x24=0x7f020059;
+        public static final int ic_notification=0x7f020055;
+        public static final int ic_phone_forward_grey600_36dp=0x7f020056;
+        public static final int ic_phone_forward_grey600_48dp=0x7f020057;
+        public static final int info_icon=0x7f020058;
+        public static final int logo=0x7f020059;
         public static final int plus=0x7f02005a;
         public static final int postemobile=0x7f02005b;
         public static final int raised_button_background=0x7f02005c;

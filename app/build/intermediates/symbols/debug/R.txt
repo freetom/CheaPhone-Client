@@ -392,11 +392,11 @@ int drawable ic_mail_black_18dp 0x7f020051
 int drawable ic_mail_black_24dp 0x7f020052
 int drawable ic_mail_black_24dp3 0x7f020053
 int drawable ic_menu_white_24dp 0x7f020054
-int drawable ic_phone_forward_grey600_36dp 0x7f020055
-int drawable ic_phone_forward_grey600_48dp 0x7f020056
-int drawable info_icon 0x7f020057
-int drawable logo 0x7f020058
-int drawable logo_24x24 0x7f020059
+int drawable ic_notification 0x7f020055
+int drawable ic_phone_forward_grey600_36dp 0x7f020056
+int drawable ic_phone_forward_grey600_48dp 0x7f020057
+int drawable info_icon 0x7f020058
+int drawable logo 0x7f020059
 int drawable plus 0x7f02005a
 int drawable postemobile 0x7f02005b
 int drawable raised_button_background 0x7f02005c
