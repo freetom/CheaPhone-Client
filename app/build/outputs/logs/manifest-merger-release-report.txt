@@ -4,7 +4,7 @@ ADDED from /home/tomas/CheaPhone-Client/app/src/main/AndroidManifest.xml:2:1-69:
 	xmlns:android
 		ADDED from /home/tomas/CheaPhone-Client/app/src/main/AndroidManifest.xml:2:11-69
 	package
-		ADDED from /home/tomas/CheaPhone-Client/app/src/main/AndroidManifest.xml:3:5-46
+		ADDED from /home/tomas/CheaPhone-Client/app/src/main/AndroidManifest.xml:3:5-29
 		INJECTED from /home/tomas/CheaPhone-Client/app/src/main/AndroidManifest.xml
 		INJECTED from /home/tomas/CheaPhone-Client/app/src/main/AndroidManifest.xml
 	android:versionName
@@ -66,14 +66,14 @@ MERGED from [com.android.support:support-v4:23.1.1] /home/tomas/CheaPhone-Client
 		ADDED from /home/tomas/CheaPhone-Client/app/src/main/AndroidManifest.xml:21:9-38
 	android:theme
 		ADDED from /home/tomas/CheaPhone-Client/app/src/main/AndroidManifest.xml:20:9-40
-receiver#com.greatapplications.bestoffer.BootUpReceiver
+receiver#cheaphone.core.BootUpReceiver
 ADDED from /home/tomas/CheaPhone-Client/app/src/main/AndroidManifest.xml:24:9-30:20
 	android:enabled
 		ADDED from /home/tomas/CheaPhone-Client/app/src/main/AndroidManifest.xml:24:19-41
 	android:permission
 		ADDED from /home/tomas/CheaPhone-Client/app/src/main/AndroidManifest.xml:25:13-75
 	android:name
-		ADDED from /home/tomas/CheaPhone-Client/app/src/main/AndroidManifest.xml:24:42-72
+		ADDED from /home/tomas/CheaPhone-Client/app/src/main/AndroidManifest.xml:24:42-86
 intent-filter#android.intent.action.BOOT_COMPLETED+android.intent.category.DEFAULT
 ADDED from /home/tomas/CheaPhone-Client/app/src/main/AndroidManifest.xml:26:13-29:29
 action#android.intent.action.BOOT_COMPLETED
@@ -84,16 +84,16 @@ category#android.intent.category.DEFAULT
 ADDED from /home/tomas/CheaPhone-Client/app/src/main/AndroidManifest.xml:28:17-76
 	android:name
 		ADDED from /home/tomas/CheaPhone-Client/app/src/main/AndroidManifest.xml:28:27-73
-service#com.greatapplications.bestoffer.MainService
-ADDED from /home/tomas/CheaPhone-Client/app/src/main/AndroidManifest.xml:32:9-46
+service#cheaphone.core.MainService
+ADDED from /home/tomas/CheaPhone-Client/app/src/main/AndroidManifest.xml:32:9-61
 	android:name
-		ADDED from /home/tomas/CheaPhone-Client/app/src/main/AndroidManifest.xml:32:18-44
-activity#com.greatapplications.bestoffergui.SplashScreen
+		ADDED from /home/tomas/CheaPhone-Client/app/src/main/AndroidManifest.xml:32:18-59
+activity#cheaphone.gui.SplashScreen
 ADDED from /home/tomas/CheaPhone-Client/app/src/main/AndroidManifest.xml:35:9-43:20
 	android:screenOrientation
 		ADDED from /home/tomas/CheaPhone-Client/app/src/main/AndroidManifest.xml:37:13-49
 	android:name
-		ADDED from /home/tomas/CheaPhone-Client/app/src/main/AndroidManifest.xml:36:13-75
+		ADDED from /home/tomas/CheaPhone-Client/app/src/main/AndroidManifest.xml:36:13-54
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
 ADDED from /home/tomas/CheaPhone-Client/app/src/main/AndroidManifest.xml:38:13-42:29
 action#android.intent.action.MAIN
@@ -104,21 +104,21 @@ category#android.intent.category.LAUNCHER
 ADDED from /home/tomas/CheaPhone-Client/app/src/main/AndroidManifest.xml:41:17-77
 	android:name
 		ADDED from /home/tomas/CheaPhone-Client/app/src/main/AndroidManifest.xml:41:27-74
-activity#com.greatapplications.bestoffergui.MainActivity
+activity#cheaphone.gui.MainActivity
 ADDED from /home/tomas/CheaPhone-Client/app/src/main/AndroidManifest.xml:46:9-51:20
 	android:screenOrientation
 		ADDED from /home/tomas/CheaPhone-Client/app/src/main/AndroidManifest.xml:48:13-49
 	android:name
-		ADDED from /home/tomas/CheaPhone-Client/app/src/main/AndroidManifest.xml:47:13-75
-activity#com.greatapplications.bestoffergui.Offerta
+		ADDED from /home/tomas/CheaPhone-Client/app/src/main/AndroidManifest.xml:47:13-54
+activity#cheaphone.gui.Offerta
 ADDED from /home/tomas/CheaPhone-Client/app/src/main/AndroidManifest.xml:53:9-58:15
 	android:screenOrientation
 		ADDED from /home/tomas/CheaPhone-Client/app/src/main/AndroidManifest.xml:55:13-49
 	android:name
-		ADDED from /home/tomas/CheaPhone-Client/app/src/main/AndroidManifest.xml:54:13-70
-activity#com.greatapplications.bestoffergui.Opzioni
+		ADDED from /home/tomas/CheaPhone-Client/app/src/main/AndroidManifest.xml:54:13-49
+activity#cheaphone.gui.Opzioni
 ADDED from /home/tomas/CheaPhone-Client/app/src/main/AndroidManifest.xml:60:9-65:11
 	android:screenOrientation
 		ADDED from /home/tomas/CheaPhone-Client/app/src/main/AndroidManifest.xml:62:9-45
 	android:name
-		ADDED from /home/tomas/CheaPhone-Client/app/src/main/AndroidManifest.xml:61:9-66
+		ADDED from /home/tomas/CheaPhone-Client/app/src/main/AndroidManifest.xml:61:9-45

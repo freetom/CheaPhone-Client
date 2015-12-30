@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.greatapplications.bestoffer"
+    package="cheaphone.core"
     android:versionCode="4"
     android:versionName="1.0" >
 
@@ -19,7 +19,7 @@
         android:label="CheaPhone"
         android:theme="@style/AppTheme" >
         <receiver
-            android:name="com.greatapplications.bestoffer.BootUpReceiver"
+            android:name="cheaphone.core.BootUpReceiver"
             android:enabled="true"
             android:permission="android.permission.RECEIVE_BOOT_COMPLETED" >
             <intent-filter>
@@ -29,11 +29,11 @@
             </intent-filter>
         </receiver>
 
-        <service android:name="com.greatapplications.bestoffer.MainService" />
+        <service android:name="cheaphone.core.MainService" />
 
         <!-- Splash screen -->
         <activity
-            android:name="com.greatapplications.bestoffergui.SplashScreen"
+            android:name="cheaphone.gui.SplashScreen"
             android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -42,14 +42,14 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.greatapplications.bestoffergui.MainActivity"
+            android:name="cheaphone.gui.MainActivity"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name="com.greatapplications.bestoffergui.Offerta"
+            android:name="cheaphone.gui.Offerta"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.greatapplications.bestoffergui.Opzioni"
+            android:name="cheaphone.gui.Opzioni"
             android:screenOrientation="portrait" />
     </application>
 

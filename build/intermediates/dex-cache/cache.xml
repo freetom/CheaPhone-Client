@@ -6,42 +6,42 @@
         jumboMode="false"
         revision="21.1.2"
         sha1="8d680ba5a623724d1fb0e81c36a790f023a6cede">
-        <dex dex="/home/tomas/CheaPhone-Client/app/build/intermediates/pre-dexed/debug/support-annotations-23.1.1-be126228d199c58e5b691b972a1b3fb57accaf8c.jar" />
-    </item>
-    <item
-        jar="/home/tomas/CheaPhone-Client/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/jars/libs/internal_impl-23.1.1.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="a4de9c81ae239414e1ed0f86441b02abaf29bca9">
-        <dex dex="/home/tomas/CheaPhone-Client/app/build/intermediates/pre-dexed/debug/internal_impl-23.1.1-cc4cd8a19b959798eb6cd1af2f707037e07ed89f.jar" />
-    </item>
-    <item
-        jar="/home/tomas/CheaPhone-Client/app/build/intermediates/exploded-aar/com.jjoe64/graphview/4.0.0/jars/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="ae24ad61a573cd1faf8261f5ec6d8f0cb58ddaad">
-        <dex dex="/home/tomas/CheaPhone-Client/app/build/intermediates/pre-dexed/debug/classes-b1982e6c23a5199c49a28dd6ff7c6fab54d2a1ec.jar" />
-    </item>
-    <item
-        jar="/home/tomas/CheaPhone-Client/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/jars/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="6cbc7773921fcfedbe55657578f0cbfe614778dc">
-        <dex dex="/home/tomas/CheaPhone-Client/app/build/intermediates/pre-dexed/debug/classes-11774fb7910f8c72fa050e23eb15e6bf474bdfc5.jar" />
-    </item>
-    <item
-        jar="/home/tomas/CheaPhone-Client/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/jars/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
-        <dex dex="/home/tomas/CheaPhone-Client/app/build/intermediates/pre-dexed/debug/classes-fd27397ffdc6c014faa10514084467972a2d6d38.jar" />
+        <dex dex="/home/tomas/CheaPhone-Client/app/build/intermediates/pre-dexed/release/support-annotations-23.1.1-be126228d199c58e5b691b972a1b3fb57accaf8c.jar" />
     </item>
     <item
         jar="/home/tomas/CheaPhone-Client/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.1.1/jars/classes.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="09c5e804bc67fc0580360043dff067df574a60d4">
-        <dex dex="/home/tomas/CheaPhone-Client/app/build/intermediates/pre-dexed/debug/classes-05febb35784782cbe7b139528d2d982d08e493e9.jar" />
+        <dex dex="/home/tomas/CheaPhone-Client/app/build/intermediates/pre-dexed/release/classes-05febb35784782cbe7b139528d2d982d08e493e9.jar" />
+    </item>
+    <item
+        jar="/home/tomas/CheaPhone-Client/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/jars/libs/internal_impl-23.1.1.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="a4de9c81ae239414e1ed0f86441b02abaf29bca9">
+        <dex dex="/home/tomas/CheaPhone-Client/app/build/intermediates/pre-dexed/release/internal_impl-23.1.1-cc4cd8a19b959798eb6cd1af2f707037e07ed89f.jar" />
+    </item>
+    <item
+        jar="/home/tomas/CheaPhone-Client/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/jars/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
+        <dex dex="/home/tomas/CheaPhone-Client/app/build/intermediates/pre-dexed/release/classes-fd27397ffdc6c014faa10514084467972a2d6d38.jar" />
+    </item>
+    <item
+        jar="/home/tomas/CheaPhone-Client/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/jars/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="6cbc7773921fcfedbe55657578f0cbfe614778dc">
+        <dex dex="/home/tomas/CheaPhone-Client/app/build/intermediates/pre-dexed/release/classes-11774fb7910f8c72fa050e23eb15e6bf474bdfc5.jar" />
+    </item>
+    <item
+        jar="/home/tomas/CheaPhone-Client/app/build/intermediates/exploded-aar/com.jjoe64/graphview/4.0.0/jars/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="ae24ad61a573cd1faf8261f5ec6d8f0cb58ddaad">
+        <dex dex="/home/tomas/CheaPhone-Client/app/build/intermediates/pre-dexed/release/classes-b1982e6c23a5199c49a28dd6ff7c6fab54d2a1ec.jar" />
     </item>
 
 </items>
