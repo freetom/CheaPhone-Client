@@ -416,7 +416,7 @@ public class Offerta extends ActionBarActivity {
             finestra.addView(eta);
         }
 
-        if (m.getRet().get(index).offer.youAndMe || YandMnumber!=null) {
+        if (m.getRet().get(index).offer.youAndMe && YandMnumber!=null) {
             TextView yam=new TextView(this);
             yam.setTextSize(12);
             yam.setTextColor(text_color);

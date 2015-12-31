@@ -220,7 +220,7 @@ public class HandleCalls {
 		
 		return ret;
 	}
-	
+
 	
 	//this function operate in mutual exclusion on the database of calls, it find the most called number of the same operator, potentially the 
 	//you and me partner. Returns the number of minutes in total per day that you are using with him.

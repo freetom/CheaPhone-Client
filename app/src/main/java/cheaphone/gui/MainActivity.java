@@ -85,8 +85,8 @@ public class MainActivity extends ActionBarActivity {
     public volatile static Calendar last_time;
     public volatile static boolean is_computing=false;
 
-    public static String YandMnumber;
-    public static ArrayList<Result> ret;
+    public static volatile  String YandMnumber;
+    public static volatile ArrayList<Result> ret;
 
     public static MainActivity activity;
 

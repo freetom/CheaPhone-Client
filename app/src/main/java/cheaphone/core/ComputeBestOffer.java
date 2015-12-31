@@ -21,6 +21,7 @@ package cheaphone.core;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.HashSet;
 
 public class ComputeBestOffer {
 	
@@ -90,31 +91,19 @@ public class ComputeBestOffer {
 
 	public static Pair<Integer,Integer> getKnownAndUnknownOperators(HandleSms hs, HandleCalls hc, CacheOfNumbersToOperators c){
 
-		Integer tot;
-		ArrayList<String> numbers=hs.getNumbers();
+		Integer tot,n_unknown=0;
+		HashSet<String> numbers=new HashSet<String>();
+		numbers.addAll(hs.getNumbers());
+		numbers.addAll(hc.getNumbers());
 		tot=numbers.size();
 		ArrayList<String> numberOfOperatorsUnknown=new ArrayList<String>();
 
-		for(int i=0;i<numbers.size();i++){
-			if(c.getValue(numbers.get(i))==null)
-				if(!numberOfOperatorsUnknown.contains(numbers.get(i)))
-					numberOfOperatorsUnknown.add(numbers.get(i));
+		for(String number : numbers){
+			if(c.getValue(number)==null)
+				n_unknown++;
 		}
 
-
-		numbers=hc.getNumbers();
-		tot+=numbers.size();
-		ArrayList<String> numberOfOperatorsUnknown1=new ArrayList<String>();
-
-		for(int i=0;i<numbers.size();i++){
-			if(c.getValue(numbers.get(i))==null)
-				if(!numberOfOperatorsUnknown.contains(numbers.get(i)))
-					numberOfOperatorsUnknown.add(numbers.get(i));
-		}
-
-		Integer diff=numberOfOperatorsUnknown.size()+numberOfOperatorsUnknown1.size();
-
-		return new Pair<Integer,Integer>(tot,diff);
+		return new Pair<Integer,Integer>(tot,n_unknown);
 	}
 	
 	
