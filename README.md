@@ -17,7 +17,7 @@ Finally, there is the best combination calculus part. The computation process is
 
 Privacy:
 Almost all the data are kept lccally in the device. The server only keeps the cache that associate number to operators and I use that data only to make the system works. <br>
-Furthermore, cryptography + digital signature is in place.
+Furthermore, cryptography + digital signature is in place. [more infos on the server -> end of the document for reference]
 
 Obliouvsly, the more time the app stay into the system the more it will be accurate. 
 
