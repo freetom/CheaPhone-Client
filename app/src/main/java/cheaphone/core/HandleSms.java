@@ -42,9 +42,14 @@ public class HandleSms {
 	private DatabaseSms smsDB=null;
 	
 	public HandleSms(){
-		
-		smsDB=(DatabaseSms) Serialize.loadSerializedObject(new File(Constants.applicationFilesPath+Constants.smsDatabasePath));
-		
+
+		try {
+			smsDB = (DatabaseSms) Serialize.loadSerializedObject(new File(Constants.applicationFilesPath + Constants.smsDatabasePath));
+		}
+		catch(Exception e){
+			smsDB=null;
+		}
+
 		if(smsDB==null)	smsDB=(DatabaseSms) Serialize.loadSerializedObject(new File(Constants.applicationFilesPath+Constants.smsDatabasePath1));
 		
 		if(smsDB==null) smsDB=new DatabaseSms();

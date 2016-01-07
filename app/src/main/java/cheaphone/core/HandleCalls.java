@@ -44,9 +44,14 @@ public class HandleCalls {
 	private DatabaseCalls callDB=null;
 	
 	public HandleCalls(){
-		
-		callDB=(DatabaseCalls) Serialize.loadSerializedObject(new File(Constants.applicationFilesPath+Constants.callsDatabasePath));
-		
+
+		try {
+			callDB = (DatabaseCalls) Serialize.loadSerializedObject(new File(Constants.applicationFilesPath + Constants.callsDatabasePath));
+		}
+		catch(Exception e){
+			callDB=null;
+		}
+
 		if(callDB==null)	callDB=(DatabaseCalls) Serialize.loadSerializedObject(new File(Constants.applicationFilesPath+Constants.callsDatabasePath1));
 		
 		if(callDB==null) callDB=new DatabaseCalls();
