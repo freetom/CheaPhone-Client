@@ -78,6 +78,17 @@ public class Stampa extends Fragment {
     private List<Option> data_o= new ArrayList<>();
     private List<Data> mData=new ArrayList<Data>();
 
+    RecyclerItemClickListener.OnItemClickListener onClickListener=new RecyclerItemClickListener.OnItemClickListener() {
+        @Override
+        public void onItemClick(View view, int position) {
+            // do whatever
+            indice = position + 1;
+            Intent offerta = new Intent(getActivity(), Offerta.class);
+            offerta.putExtra("pos", indice);
+            startActivity(offerta);
+        }
+    };
+
     public Stampa(){
 
         current=this;
@@ -270,17 +281,13 @@ public class Stampa extends Fragment {
             });
 
             mRecyclerView.addOnItemTouchListener(
-                    new RecyclerItemClickListener(m.getApplicationContext(), new RecyclerItemClickListener.OnItemClickListener() {
-                        @Override
-                        public void onItemClick(View view, int position) {
-                            // do whatever
-                            indice = position + 1;
-                            Intent offerta = new Intent(getActivity(), Offerta.class);
-                            offerta.putExtra("pos", indice);
-                            startActivity(offerta);
-                        }
-                    })
+                    new RecyclerItemClickListener(m.getApplicationContext(), onClickListener)
             );
+        }
+
+        if(!err_msg.equals("")){
+            tab.setOnClickListener(null);
+            mRecyclerView.removeOnItemTouchListener(null);
         }
 
 
