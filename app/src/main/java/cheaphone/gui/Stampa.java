@@ -90,6 +90,16 @@ public class Stampa extends Fragment {
     };
     RecyclerItemClickListener recyclerClickListener=null;
 
+    View.OnClickListener xxx=new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            indice = 0;
+            Intent offerta = new Intent(getActivity(), Offerta.class);
+            offerta.putExtra("pos", indice);
+            startActivity(offerta);
+        }
+    };
+
     public Stampa(){
 
         current=this;
@@ -270,31 +280,20 @@ public class Stampa extends Fragment {
 
         if (tab == null) {
             tab = (LinearLayout) rootView.findViewById(R.id.ling);
-        }
-
-
-
-
-        if(!err_msg.equals("")){
-            tab.setOnClickListener(null);
-            mRecyclerView.removeOnItemTouchListener(null);
-        }
-        else{
-            tab.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    indice = 0;
-                    Intent offerta = new Intent(getActivity(), Offerta.class);
-                    offerta.putExtra("pos", indice);
-                    startActivity(offerta);
-                }
-            });
 
             if(recyclerClickListener==null)
                 recyclerClickListener=new RecyclerItemClickListener(m.getApplicationContext(), onClickListener);
             mRecyclerView.addOnItemTouchListener(
                     recyclerClickListener
             );
+        }
+
+        if(!err_msg.equals("")){
+            tab.setOnClickListener(null);
+            //mRecyclerView.removeOnItemTouchListener(recyclerClickListener);
+        }
+        else{
+            tab.setOnClickListener(xxx);
         }
 
 

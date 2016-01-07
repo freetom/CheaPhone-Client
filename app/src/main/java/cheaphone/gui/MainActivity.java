@@ -197,10 +197,10 @@ public class MainActivity extends ActionBarActivity {
             @Override
             public void onPageSelected(int position) {
                 Calendar nearNow = Calendar.getInstance();
-                nearNow.add(Calendar.MILLISECOND, -5000);
-                if (MainActivity.last_time != null && nearNow.after(MainActivity.last_time)) {
-                    MainActivity.current.updateOffers();
-                }
+                //nearNow.add(Calendar.MILLISECOND, -5000);
+                //if (MainActivity.last_time != null && nearNow.after(MainActivity.last_time)) {
+
+                //}
 
                 if (position == 0) {
                     h.setBackgroundColor(selected);
@@ -208,6 +208,7 @@ public class MainActivity extends ActionBarActivity {
                     i.setBackgroundColor(an_selected);
                 }
                 if (position == 1) {
+                    MainActivity.current.updateOffers();
                     try {
                         Stampa.current.onCreateView(Stampa.current.inflater, Stampa.current.container, null);
                     }
