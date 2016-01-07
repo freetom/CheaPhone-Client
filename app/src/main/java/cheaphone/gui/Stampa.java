@@ -270,6 +270,16 @@ public class Stampa extends Fragment {
 
         if (tab == null) {
             tab = (LinearLayout) rootView.findViewById(R.id.ling);
+        }
+
+
+
+
+        if(!err_msg.equals("")){
+            tab.setOnClickListener(null);
+            mRecyclerView.removeOnItemTouchListener(null);
+        }
+        else{
             tab.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -283,11 +293,6 @@ public class Stampa extends Fragment {
             mRecyclerView.addOnItemTouchListener(
                     new RecyclerItemClickListener(m.getApplicationContext(), onClickListener)
             );
-        }
-
-        if(!err_msg.equals("")){
-            tab.setOnClickListener(null);
-            mRecyclerView.removeOnItemTouchListener(null);
         }
 
 
