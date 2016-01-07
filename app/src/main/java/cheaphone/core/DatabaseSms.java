@@ -30,11 +30,14 @@ public class DatabaseSms implements Serializable {
 	
 	//List of all the sms
 	public ArrayList<DailySmsTo> sms;
-	
+
+	Calendar creationTime;
+
 	//The constructor is called only if the database in new, or corrupted
 	public DatabaseSms(){
 		
 		lastSmsDateTime=Calendar.getInstance();
+		creationTime=Calendar.getInstance();
 		
 		//Set the lastSmsDateTime to the days_of_memory ago from now
 		Date dt=new Date();

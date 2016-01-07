@@ -25,17 +25,21 @@ import java.util.Date;
 
 public class DatabaseCalls implements Serializable {
 	
-	//Record the last date of the most recent sms already stored in the db, only new sms must be stored.
+	//Record the last date of the most recent sms already stored in the db, only newer calls must be stored.
 	private Calendar lastOutgoingCallDateTime;
 	
 	//List of all the sms
 	public ArrayList<DailyCallsTo> calls;
-	
+
+	Calendar creationTime;
+
 	//The constructor is called only if the database in new, or corrupted
 	public DatabaseCalls(){
 		
 		lastOutgoingCallDateTime=Calendar.getInstance();
-		
+
+		creationTime=Calendar.getInstance();
+
 		//Set the lastSmsDateTime to the days_of_memory ago from now
 		Date dt=new Date();
 		long l = dt.getTime() - (((long)Constants.days_of_memory)*1000l*60l*60l*24l);

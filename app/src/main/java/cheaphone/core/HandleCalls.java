@@ -34,7 +34,7 @@ public class HandleCalls {
 	
 	/*
 	 * 
-	 * Class that handles the calls. Update the db and get high level informations on it.
+	 * Class that handles the calls. Update the db and get high level information on it.
 	 * Note that every function that want to acces the database in write mode, must lock the relative mutex.
 	 * 
 	 * Bortoli Tomas
@@ -181,6 +181,7 @@ public class HandleCalls {
 			
 		}
 		catch(Exception e){
+			days=(Calendar.getInstance().getTimeInMillis()-callDB.creationTime.getTimeInMillis())/86400000l;
 		}
 		finally{
 			me.unlock();

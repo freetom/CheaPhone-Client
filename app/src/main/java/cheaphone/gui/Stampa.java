@@ -88,6 +88,7 @@ public class Stampa extends Fragment {
             startActivity(offerta);
         }
     };
+    RecyclerItemClickListener recyclerClickListener=null;
 
     public Stampa(){
 
@@ -267,7 +268,6 @@ public class Stampa extends Fragment {
             mAdapter.addItem(k, (Data)mData.get(k).clone());
 
 
-
         if (tab == null) {
             tab = (LinearLayout) rootView.findViewById(R.id.ling);
         }
@@ -290,8 +290,10 @@ public class Stampa extends Fragment {
                 }
             });
 
+            if(recyclerClickListener==null)
+                recyclerClickListener=new RecyclerItemClickListener(m.getApplicationContext(), onClickListener);
             mRecyclerView.addOnItemTouchListener(
-                    new RecyclerItemClickListener(m.getApplicationContext(), onClickListener)
+                    recyclerClickListener
             );
         }
 

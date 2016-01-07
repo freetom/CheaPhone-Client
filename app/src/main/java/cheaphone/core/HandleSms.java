@@ -160,6 +160,7 @@ public class HandleSms {
 			
 		}
 		catch(Exception e){
+			days=(Calendar.getInstance().getTimeInMillis()-smsDB.creationTime.getTimeInMillis())/86400000l;
 		}
 		finally{
 			me.unlock();
