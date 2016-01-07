@@ -38,6 +38,6 @@ Obliouvsly, the more time the app stay into the system the more it will be accur
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 
-The server's code is also available: https://github.com/freetomas/CheaPhone-Server
+The server's code is also Free Software: https://github.com/freetomas/CheaPhone-Server
 
 Enjoy! 
