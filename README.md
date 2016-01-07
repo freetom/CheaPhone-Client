@@ -9,7 +9,9 @@ The idea is simple. Using the monitored data from the smartphone; sms,calls,inte
 The application is made for Italian people but can be easily adapted to other countries.
 
 
+
 Data:
+
 The app monitor all the sms, calls, and data traffic, tracking the precise date of these data, and associating the various numbers contacted (where needed). When the app is installed can retrieve all the information from calls log and sms log, but for the data traffic usage there isn't a log, so its monitoring start from the application first time startup. Cheaphone create a file for each category of data monitored, keeping an updated database with all user's data. To not fill all the secondary memory, there is an expiration period. Data older than that period are erased. In cheaphone is also implemented mutual exclusion in data accessing. So no race condition may happened, causing possibly but very unlikely bugs. And this is the end of the data monitoring section.
 
 Networking:
