@@ -3,6 +3,7 @@ CheaPhone is an application for Android systems, it finds out which is the best 
 
 Supports Android from 4.0 to the lastest. <br/>
 Why not previous versions? GUI incompatibility; material style<br/>
+
 The idea is simple. Using the monitored data from the smartphone; sms,calls,internet traffic, and relative contacted numbers we can easily compute which is the best combination available on the market.<br/>
 The application is made for Italian people but can be easily adapted to other countries.
 
