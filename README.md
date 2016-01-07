@@ -15,6 +15,10 @@ A connection to a server system is needed, to update the offers, and to retrieve
 Algorithm:<br/>
 Finally, there is the best combination calculus part. The computation process is enough direct. We have all the infos, so we can infer how many calls, messages and megabytes the user use in a month. We can compute exactly the cost of each offer, with each rate, and finding the best option that minimize the cost. Also we find the possible you and me number and use it if the offer or the option include it. In the end we show the results, as combinations, showing all the related infos, included added or subtracted costs to pass to that offer, and one or more links to web pages of offer, rate, and options. The final choice rest to the user. This for us is the best way to minimize the cost of telephone usage; in a pay per use system. 
 
+Privacy:
+Almost all the data are kept lccally in the device. The server only keeps the cache that associate number to operators and I use that data only to make the system works. <br>
+Furthermore, cryptography + digital signature is in place.
+
 Obliouvsly, the more time the app stay into the system the more it will be accurate. 
 
     Copyright 2014 Bortoli Tomas
