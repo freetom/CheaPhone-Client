@@ -115,9 +115,9 @@ public class Home extends Fragment {
                             @Override
                             public void run() {
                                 if(calls>=0 && sms>=0 && data>=0) {
-                                    giorni_calls.setText(String.valueOf(calls) + " giorni");
-                                    giorni_sms.setText(String.valueOf(sms) + " giorni");
-                                    giorni_dth.setText(String.valueOf(data) + " giorni");
+                                    giorni_calls.setText(String.valueOf(calls));
+                                    giorni_sms.setText(String.valueOf(sms));
+                                    giorni_dth.setText(String.valueOf(data));
                                 }
                                 else {
                                     giorni_calls.setText("N/A");

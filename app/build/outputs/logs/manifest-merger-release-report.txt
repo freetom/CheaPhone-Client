@@ -10,7 +10,7 @@ ADDED from /home/tomas/CheaPhone-Client/app/src/main/AndroidManifest.xml:2:1-69:
 	android:versionName
 		ADDED from /home/tomas/CheaPhone-Client/app/src/main/AndroidManifest.xml:5:5-30
 	android:versionCode
-		ADDED from /home/tomas/CheaPhone-Client/app/src/main/AndroidManifest.xml:4:5-28
+		ADDED from /home/tomas/CheaPhone-Client/app/src/main/AndroidManifest.xml:4:5-29
 		INJECTED from /home/tomas/CheaPhone-Client/app/src/main/AndroidManifest.xml
 		INJECTED from /home/tomas/CheaPhone-Client/app/src/main/AndroidManifest.xml
 uses-permission#android.permission.READ_SMS
