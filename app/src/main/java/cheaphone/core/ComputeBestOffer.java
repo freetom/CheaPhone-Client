@@ -168,8 +168,9 @@ public class ComputeBestOffer {
 			if(numberOfOperatorsUnknown.size()>0){
 				String[] operators = nm.numberToOperators(numberOfOperatorsUnknown);
 				
-				for(int i=0;i<operators.length-1;i++)
-					c.addValue(numberOfOperatorsUnknown.get(i), operators[i]);
+				for(int i=0;i<operators.length && i<numberOfOperatorsUnknown.size();i++)
+					if(!operators[i].trim().equals(""))
+						c.addValue(numberOfOperatorsUnknown.get(i), operators[i]);
 			}
 			
 		}
