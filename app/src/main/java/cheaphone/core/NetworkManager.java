@@ -230,7 +230,7 @@ public class NetworkManager {
 		
 		sendMessage(message);
 		
-		message=receiveMessage();
+		message=receiveMessage().trim();
 		
 		return message.split(SEPARATOR);
 	}

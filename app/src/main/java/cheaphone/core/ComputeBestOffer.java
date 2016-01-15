@@ -126,7 +126,7 @@ public class ComputeBestOffer {
 		//block that gather and translate all the numbers
 		try{
 			ArrayList<String> numbers=hs.getNumbers(); //get the numbers of messages
-			ArrayList<String> numberOfOperatorsUnknown=new ArrayList<String>(); //list for number of unknown operator for sms
+			HashSet<String> numberOfOperatorsUnknown=new HashSet<String>(); // number of unknown operator for sms
 			
 			//if is a settled number, add it to the cache
 			for(int i=0;i<numbers.size();i++){
@@ -144,8 +144,7 @@ public class ComputeBestOffer {
 			
 			//then do the same thing for the numbers of the calls
 			numbers=hc.getNumbers();
-			ArrayList<String> numberOfOperatorsUnknown1=new ArrayList<String>(); //create a list for the numbers with unknown operator
-			
+
 			//if is a settled number, add it to the cache
 			for(int i=0;i<numbers.size();i++){
 				if(startWithPrefix(numbers.get(i)))
@@ -156,21 +155,17 @@ public class ComputeBestOffer {
 			//if is a number of unknown operator, add it to the list
 			for(int i=0;i<numbers.size();i++){
 				if(c.getValue(numbers.get(i))==null)
-					if(!numberOfOperatorsUnknown1.contains(numbers.get(i)))
-						numberOfOperatorsUnknown1.add(numbers.get(i));
+					if(!numberOfOperatorsUnknown.contains(numbers.get(i)))
+						numberOfOperatorsUnknown.add(numbers.get(i));
 			}
 			
-			//add the list of the numbers of calls to the list of the numbers of sms, so we have a list with all unknown numbers
-			numberOfOperatorsUnknown.addAll(numberOfOperatorsUnknown1);
-			
-			
-			
+			ArrayList<String> nuo=new ArrayList<String>();
+			nuo.addAll(numberOfOperatorsUnknown);
 			if(numberOfOperatorsUnknown.size()>0){
-				String[] operators = nm.numberToOperators(numberOfOperatorsUnknown);
+				String[] operators = nm.numberToOperators(nuo);
 				
-				for(int i=0;i<operators.length && i<numberOfOperatorsUnknown.size();i++)
-					if(!operators[i].trim().equals(""))
-						c.addValue(numberOfOperatorsUnknown.get(i), operators[i]);
+				for(int i=0;i<operators.length && i<nuo.size();i++)
+					c.addValue(nuo.get(i), operators[i]);
 			}
 			
 		}
