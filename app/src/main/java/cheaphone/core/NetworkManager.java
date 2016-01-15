@@ -86,7 +86,7 @@ public class NetworkManager {
 		
 		message=randomPadding()+SEPARATOR+message+SEPARATOR+randomPadding();
 
-		//If not multiple of 32, fill with padding ___	AES-256-bit-blocks
+		//If not multiple of 32, fill with padding (could also be 16) ___	AES-256
 		int rest=message.length()%32;
 		if(rest!=0)	rest=32-rest;
 		while(rest>0){
