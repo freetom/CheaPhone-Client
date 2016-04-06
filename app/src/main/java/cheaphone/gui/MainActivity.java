@@ -66,7 +66,7 @@ import java.util.Calendar;
 //Made by Giacomo Todesco
 //Modified to correct, cleanup, try to make it working by Bortoli Tomas
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends ActionBarActivity{
 
     RelativeLayout h,i,p;
     private Toolbar toolbar;
@@ -75,6 +75,7 @@ public class MainActivity extends ActionBarActivity {
     private ListView mDrawerList;
     private ActionBarDrawerToggle mDrawerToggle;
     public boolean check=true;
+    public Typeface type;
 
     int selected=Color.rgb(162, 190, 238);
     int text_color=Color.rgb(230, 255, 255);
@@ -123,21 +124,7 @@ public class MainActivity extends ActionBarActivity {
          if(ret==null)
             ret = new ArrayList<Result>();
 
-		//startService(new Intent(this,MainService.class));
-
         toolbar.setNavigationIcon(null);
-
-
-		/*try {
-			Thread.sleep(400);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}*/
-
-
-
-
 
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
 
@@ -150,42 +137,16 @@ public class MainActivity extends ActionBarActivity {
         this.getWindowManager().getDefaultDisplay().getSize(P);
 
         //font
-        Typeface type = Typeface.createFromAsset(getAssets(), "fonts/helvetica-neue-bold.ttf");
+        type= Typeface.createFromAsset(getAssets(), "fonts/helvetica-neue-bold.ttf");
 
-        //layout home
-        h=(RelativeLayout) findViewById(R.id.home);
-        TextView home=new TextView(this);
-        home.setText("Home");
-        home.setTypeface(type);
-        home.setTextColor(text_color);
-        home.setTextSize(18);
-        home.setGravity(Gravity.CENTER);
-        home.setLayoutParams(new LayoutParams(P.x/3, LayoutParams.MATCH_PARENT));
-        //h.setBackgroundColor(Color.rgb(81, 94, 145));
-        h.setBackgroundColor(selected);
-        h.addView(home);
+        //layout tab home
+        home_layout();
 
-        //layout info
-        i=(RelativeLayout) findViewById(R.id.info);
-        TextView info=new TextView(this);
-        info.setLayoutParams(new LayoutParams(P.x/3, LayoutParams.MATCH_PARENT));
-        info.setGravity(Gravity.CENTER);
-        info.setText("Offerte");
-        info.setTypeface(type);
-        info.setTextColor(text_color);
-        info.setTextSize(18);
-        i.addView(info);
+        //layout tab offerta
+        stampa_layout();
 
-        //layout privacy
-        p=(RelativeLayout) findViewById(R.id.privacy);
-        TextView privacy=new TextView(this);
-        privacy.setLayoutParams(new LayoutParams(P.x / 3, LayoutParams.MATCH_PARENT));
-        privacy.setText("Info");
-        privacy.setTypeface(type);
-        privacy.setGravity(Gravity.CENTER);
-        privacy.setTextColor(text_color);
-        privacy.setTextSize(18);
-        p.addView(privacy);
+        //layout tab credits
+        info_layot();
 
         //listener change adapter
         mViewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
@@ -197,13 +158,7 @@ public class MainActivity extends ActionBarActivity {
             @Override
             public void onPageSelected(int position) {
                 Calendar nearNow = Calendar.getInstance();
-                nearNow.add(Calendar.MILLISECOND, -5000);
-                if (MainActivity.last_time != null && nearNow.after(MainActivity.last_time)) {
-                    MainActivity.current.updateOffers();
-                }
-
-                if(position == 0 || position ==2 )
-                    Stampa.current.onCreateView(Stampa.current.inflater, Stampa.current.container, null);
+                //nearNow.add(Calendar.MILLISECOND, -5000);
 
                 if (position == 0) {
                     h.setBackgroundColor(selected);
@@ -211,6 +166,11 @@ public class MainActivity extends ActionBarActivity {
                     i.setBackgroundColor(an_selected);
                 }
                 if (position == 1) {
+                    MainActivity.current.updateOffers();
+                    try {
+                        Stampa.current.onCreateView(Stampa.current.inflater, Stampa.current.container, null);
+                    }
+                    catch(Exception e){}
                     i.setBackgroundColor(selected);
                     h.setBackgroundColor(an_selected);
                     p.setBackgroundColor(an_selected);
@@ -236,7 +196,7 @@ public class MainActivity extends ActionBarActivity {
                 if(event.getAction() == MotionEvent.ACTION_DOWN) {
                     p.setBackgroundColor(selected);
                     h.setBackgroundColor(an_selected);
-                    i.setBackgroundColor(selected);
+                    i.setBackgroundColor(an_selected);
                     mViewPager.setCurrentItem(2);
                 }
 
@@ -352,6 +312,43 @@ public class MainActivity extends ActionBarActivity {
         }).start();
     }
 
+
+    public void home_layout(){
+        h=(RelativeLayout) findViewById(R.id.home);
+        TextView home=new TextView(this);
+        home.setText("Home");
+        home.setTypeface(type);
+        home.setTextColor(text_color);
+        home.setTextSize(18);
+        home.setGravity(Gravity.CENTER);
+        home.setLayoutParams(new LayoutParams(P.x/3, LayoutParams.MATCH_PARENT));
+        h.setBackgroundColor(selected);
+        h.addView(home);
+    }
+
+    public void stampa_layout(){
+        i=(RelativeLayout) findViewById(R.id.info);
+        TextView info=new TextView(this);
+        info.setLayoutParams(new LayoutParams(P.x/3, LayoutParams.MATCH_PARENT));
+        info.setGravity(Gravity.CENTER);
+        info.setText("Offerte");
+        info.setTypeface(type);
+        info.setTextColor(text_color);
+        info.setTextSize(18);
+        i.addView(info);
+    }
+
+    public void info_layot(){
+        p=(RelativeLayout) findViewById(R.id.privacy);
+        TextView privacy=new TextView(this);
+        privacy.setLayoutParams(new LayoutParams(P.x / 3, LayoutParams.MATCH_PARENT));
+        privacy.setText("Info");
+        privacy.setTypeface(type);
+        privacy.setGravity(Gravity.CENTER);
+        privacy.setTextColor(text_color);
+        privacy.setTextSize(18);
+        p.addView(privacy);
+    }
     /* The click listner for ListView in the navigation drawer */
     private class DrawerItemClickListener implements ListView.OnItemClickListener {
         @Override

@@ -115,9 +115,9 @@ public class Home extends Fragment {
                             @Override
                             public void run() {
                                 if(calls>=0 && sms>=0 && data>=0) {
-                                    giorni_calls.setText(String.valueOf(calls));
-                                    giorni_sms.setText(String.valueOf(sms));
-                                    giorni_dth.setText(String.valueOf(data));
+                                    giorni_calls.setText(String.valueOf(calls) + " giorni");
+                                    giorni_sms.setText(String.valueOf(sms) + " giorni");
+                                    giorni_dth.setText(String.valueOf(data) + " giorni");
                                 }
                                 else {
                                     giorni_calls.setText("N/A");
@@ -148,12 +148,6 @@ public class Home extends Fragment {
 
                         }
                     } catch (Exception e) {
-                        getActivity().runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                                //Toast.makeText(getActivity(), "errore3", Toast.LENGTH_LONG).show();
-                            }
-                        });
                         System.out.println(e.toString());
                     }
                 }
@@ -211,14 +205,6 @@ public class Home extends Fragment {
         r.addView(calls);
         r.addView(sms);
         r.addView(td);
-
-
-
-
-
-        /*TextView t=(TextView) rootView.findViewById(R.id.frase);*/
-        Typeface type = Typeface.createFromAsset(getActivity().getAssets(), "fonts/helvetica-neue-bold.ttf");
-
 
         return rootView;
 

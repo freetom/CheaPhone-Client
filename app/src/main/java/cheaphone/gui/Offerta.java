@@ -56,6 +56,7 @@ public class Offerta extends ActionBarActivity {
     private float sforo;
     MainActivity m;
     int size;
+    Typeface t;
 
     int text_color=Color.rgb(74,134,232);
 
@@ -72,9 +73,7 @@ public class Offerta extends ActionBarActivity {
 
         m = MainActivity.getInstance();
 
-        //toolbarFront.setNavigationIcon(R.drawable.ic_arrow_back_white_24dp);
-
-        Typeface t = Typeface.createFromAsset(getAssets(), "fonts/helvetica-neue-bold.ttf");
+        t = Typeface.createFromAsset(getAssets(), "fonts/helvetica-neue-bold.ttf");
 
         YandMnumber=m.getYu();
 
@@ -157,6 +156,7 @@ public class Offerta extends ActionBarActivity {
 
     }
 
+    //funzione per posizionare l'offerta nella pagina
     public void setOffert(final int index){
 
         //logo-nome-costo
@@ -439,6 +439,7 @@ public class Offerta extends ActionBarActivity {
 
     }
 
+    //funzione per posizionare eventuali opzioni
     public void setOption(final int index,final int position){
 
         //+ per ogni opzione
@@ -707,6 +708,7 @@ public class Offerta extends ActionBarActivity {
 
     }
 
+    //funzione per posizionare la tariffa
     public void setRate(final int index, float s){
 
         //piu tariffa in caso sfori
